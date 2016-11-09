@@ -8,9 +8,12 @@ import { Recipe } from '../recipe';
 })
 export class RecipeListComponent implements OnInit {
 
-  recipes: Recipe[] = [];
+  recipes: Recipe[] = [
+    new Recipe('Costela', 'Very Tasty', 'costela.jpg', []),
+    new Recipe('Maionese', 'Okayish', 'maionese.jpg', [])
+  ];
 
-  recipe: Recipe = new Recipe('Dumy', 'Dumy', 'favicon.ico');
+  //recipe: Recipe = new Recipe('Dumy', 'Dumy', 'favicon.ico', []);
 
   @Output() recipeSelected = new EventEmitter<Recipe>();
 
