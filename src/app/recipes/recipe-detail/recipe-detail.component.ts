@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { ShoppingListService } from '../../shopping-list/shopping-list.service';
 import { Recipe } from '../recipe';
 
@@ -10,22 +12,23 @@ export class RecipeDetailComponent implements OnInit {
 
   @Input() selectedRecipe: Recipe;
 
-  constructor(private shoppingListService: ShoppingListService) { }
+  private recipeIndex: number = 1;
+
+  constructor(private shoppingListService: ShoppingListService, private router: Router) { }
 
   ngOnInit() {
   }
 
   onAddToShoppingList() {
-    this.shoppingListService.addItems(this.selectedRecipe.ingredients); 
-
+    this.shoppingListService.addItems(this.selectedRecipe.ingredients);
   }
 
   onEdit() {
-
+    this.router.navigate(['/recipes', this.recipeIndex, 'edit']);
   }
 
   onDelete() {
-
+    this.router.navigate(['/recipes']);
   }
 
 }
