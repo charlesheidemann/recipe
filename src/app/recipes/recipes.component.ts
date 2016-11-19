@@ -7,7 +7,7 @@ import { Recipe } from './recipe'
 })
 export class RecipesComponent implements OnInit {
 
-  selectedRecipe: Recipe;
+  //selectedRecipe: Recipe;
 
   constructor() { }
 
