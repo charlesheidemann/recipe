@@ -10,10 +10,10 @@ import { Recipe } from '../recipe';
 })
 export class RecipeListComponent implements OnInit {
 
-  //recipe: Recipe = new Recipe('Dumy', 'Dumy', 'favicon.ico', []);
+  // recipe: Recipe = new Recipe('Dumy', 'Dumy', 'favicon.ico', []);
   recipes: Recipe[] = [];
 
-  @Output() recipeSelected = new EventEmitter<Recipe>();
+  // @Output() recipeSelected = new EventEmitter<Recipe>();
 
   constructor(private recipeService: RecipeService) { }
 
@@ -21,8 +21,8 @@ export class RecipeListComponent implements OnInit {
     this.recipes = this.recipeService.getRecipes();
   }
 
-  onSelected(recipe: Recipe) {
-    this.recipeSelected.emit(recipe);
-  }
+  // onSelected(recipe: Recipe) {
+  //   this.recipeSelected.emit(recipe);
+  // }
 
 }
