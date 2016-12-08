@@ -1,4 +1,4 @@
-import { Ingredient } from '../shared/ingredient';
+import { Ingredient } from './../shared/ingredient';
 
 export class ShoppingListService {
 
@@ -12,6 +12,15 @@ export class ShoppingListService {
 
   addItems(items: Ingredient[]) {
     Array.prototype.push.apply(this.items, items);
+  }
+
+  addItem(item: Ingredient) {
+    this.items.push(item);
+  }
+
+  editItem(currentItem: Ingredient, newItem: Ingredient) {
+    let items = this.items;
+    items[items.indexOf(currentItem)] = newItem;
   }
 
 }
